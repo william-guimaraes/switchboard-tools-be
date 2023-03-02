@@ -32,7 +32,8 @@ export class SwitchboardController {
             conversationId,
           );
           const activeSwitchboardIntegration =
-            conversationResult.conversation.activeSwitchboardIntegration.name;
+            conversationResult.conversation.activeSwitchboardIntegration
+              .integrationType;
 
           if (activeSwitchboardIntegration === 'zd:agentWorkspace') {
             await this.switchboardService.passControl({
