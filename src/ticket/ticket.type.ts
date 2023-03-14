@@ -1,6 +1,11 @@
+export interface TicketSourceInterface {
+  channel: string;
+}
+
 export interface TicketInterface {
   id: string;
   status: 'open' | 'solved' | 'closed';
+  via: TicketSourceInterface;
 }
 
 export interface AuditBasicEventInterface {

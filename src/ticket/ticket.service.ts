@@ -30,9 +30,11 @@ export class TicketService {
     );
   }
 
-  async findAll(): Promise<AxiosResponse<{ tickets: TicketInterface[] }>> {
+  async findAll(
+    page: number,
+  ): Promise<AxiosResponse<{ tickets: TicketInterface[]; next_page: string }>> {
     return this.httpService.axiosRef.get(
-      `${this.baseURL}?sort_by=created_at&sort_order=desc`,
+      `${this.baseURL}?page=${page}&sort_by=created_at&sort_order=desc`,
     );
   }
 
